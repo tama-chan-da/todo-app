@@ -39,6 +39,17 @@
 
                         </label>
 
+
+                        <select name="category">
+                            <option value="weekdays">平日</option>
+                            <option value="holiday">休日</option>
+                            <option value="national holiday">祝日</option>
+                        </select>
+
+
+
+
+
                         <button type="submit"
                             class="mt-8 p-4 bg-slate-800 text-white w-full max-w-xs hover:bg-slate-900 transition-colors">
                             追加する
@@ -103,11 +114,6 @@
                                                 @method('DELETE')
                                                 <button type="submit"
                                                     class="py-4 w-20 md:hover:bg-slate-200 transition-colors">削除</button>
-                                            </form>
-                                        </div>
-                                        <div>
-                                            <form>
-                                                カテゴリ
                                             </form>
                                         </div>
                                     </div>

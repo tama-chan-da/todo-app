@@ -37,6 +37,12 @@ class TaskController extends Controller
 
         $messages = ['required' => '必須項目です', 'max' => '100文字以下にしてください。'];
 
+
+        $task_name = $request->input('');
+        dd($request->input('category'));
+
+
+
         Validator::make($request->all(), $rules, $messages)->validate();
 
 
@@ -52,6 +58,10 @@ class TaskController extends Controller
         //リダイレクト
         return redirect('/tasks');
     }
+
+
+
+
 
     /**
      * Display the specified resource.
