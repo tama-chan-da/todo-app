@@ -65,6 +65,8 @@
                 <p class="text-white text-sm">Todoアプリ</p>
             </div>
         </div>
+
+
         @if ($tasks->isNotEmpty())
         <div class="max-w-7xl mx-auto mt-20">
             <div class="inline-block min-w-full py-2 align-middle">
@@ -72,8 +74,11 @@
                     <table class="min-w-full divide-y divide-gray-300">
                         <thead class="bg-gray-50">
                             <tr>
+
                                 <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900">
                                     タスク</th>
+                                <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900">
+                                    カテゴリー</th>
                                 <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-6">
                                     <span class="sr-only">Actions</span>
                                 </th>
@@ -85,6 +90,11 @@
                                 <td class="px-3 py-4 text-sm text-gray-500">
                                     <div>
                                         {{ $item->name }}
+                                    </div>
+                                </td>
+                                <td class="px-3 py-4 text-sm text-gray-500">
+                                    <div>
+                                        {{ $item->category }}
                                     </div>
                                 </td>
                                 <td class="p-0 text-right text-sm font-medium">

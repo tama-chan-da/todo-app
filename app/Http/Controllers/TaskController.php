@@ -38,8 +38,7 @@ class TaskController extends Controller
         $messages = ['required' => '必須項目です', 'max' => '100文字以下にしてください。'];
 
 
-        $task_name = $request->input('');
-        dd($request->input('category'));
+
 
 
 
@@ -51,6 +50,7 @@ class TaskController extends Controller
 
         //モデル->カラム名 = 値 で、データを割り当てる
         $task->name = $request->input('task_name');
+        $task->category = $request->input('category');
 
         //データベースに保存
         $task->save();
@@ -80,6 +80,7 @@ class TaskController extends Controller
         return view('tasks.edit', compact('task'));
     }
 
+
     /**
      * Update the specified resource in storage.
      */
@@ -101,6 +102,7 @@ class TaskController extends Controller
 
             //モデル->カラム名 = 値 で、データを割り当てる
             $task->name = $request->input('task_name');
+            $task->category = $request->input('category');
 
             //データベースに保存
             $task->save();
