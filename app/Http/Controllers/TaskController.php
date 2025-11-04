@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Task; //追加
+use App\Models\MCategory; //追加
 use Illuminate\Support\Facades\Validator; //追加２
 
 class TaskController extends Controller
@@ -14,8 +15,9 @@ class TaskController extends Controller
     public function index()
     {
         $tasks = Task::where('status', false)->get();
+        $categories = MCategory::all();
 
-        return view('tasks.index', compact('tasks'));
+        return view('tasks.index', compact('tasks', 'categories'));
     }
 
     /**
@@ -93,6 +95,7 @@ class TaskController extends Controller
             ];
 
             $messages = ['required' => '必須項目です', 'max' => '100文字以下にしてください。'];
+
 
             Validator::make($request->all(), $rules, $messages)->validate();
 

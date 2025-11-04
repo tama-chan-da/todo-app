@@ -39,14 +39,13 @@
 
                         </label>
 
-
                         <select name="category">
-                            <option value="weekdays">平日</option>
-                            <option value="holiday">休日</option>
-                            <option value="national holiday">祝日</option>
+                            @foreach ($categories as $category)
+                            <option value="{{ $category->id }}" @if(old('category_id')==$category->id) selected
+                                @endif>{{
+                                $category->name }}</option>
+                            @endforeach
                         </select>
-
-
 
 
 

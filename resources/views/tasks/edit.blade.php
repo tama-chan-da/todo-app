@@ -31,6 +31,11 @@
                             <input
                                 class="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-4 pl-4 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm"
                                 type="text" name="task_name" value="{{ $task->name }}" />
+                            <select name="category">
+                                <option value="weekdays">平日</option>
+                                <option value="holiday">休日</option>
+                                <option value="national holiday">祝日</option>
+                            </select>
                             @error('task_name')
                             <div class="mt-3">
                                 <p class="text-red-500">
